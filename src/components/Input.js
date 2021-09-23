@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Plot from "../apis/Plot";
 
 const Input = () => {
 	const [equation, setEquation] = useState("0");
+
+	useEffect(() => {
+		Plot("0", "#result");
+	}, []);
 
 	const getValue = (event) => {
 		setEquation(event.target.value);
